@@ -1,17 +1,42 @@
 import './App.css';
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
+import NamePlate from './Components/NamePlate';
 
 function App() {
-  const [legalName, updateName] = useState(["TAY"]);
+  const [legalName, updateName] = useState([" ", "T", "A", "Y"]);
 
-  const changeName = () => { return updateName("ROBERT") };
-  const returnName = () => { return updateName("TAY") };
+  const changeName = () => updateName(" ROBERT");
+  const returnName = () => updateName(" TAY");
+  const clearName = () => updateName(" ");
 
+  var hover = false;
+  
+  function nameIn() {
+    if (hover == false) {
+      hover = true
+      clearName();
+      setTimeout(() => changeName(), 0.01); 
+    }
+  }
 
+  function nameOut() {
+    hover = false 
+    clearName();
+    setTimeout(() => returnName(), 0.01);
+  }
+  
   return (
     <div className='App'>
-        <p>Hello My Name is<a onMouseOver={changeName} onMouseOut={returnName} href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'> {legalName}</a>. I am a..</p>
+        <p>Hello My Name is
+          <nameplatediv>
+            <span>
+              <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut} href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
+                <NamePlate Names={[...legalName]} />
+              </a>
+            </span>
+          </nameplatediv>
+        . I am a..</p>
         <div className='developer-con'>
           <div className='developer'>
             <Typewriter 
@@ -24,7 +49,7 @@ function App() {
               }}
             />
           </div>
-          <div>Developer</div>
+        <div>Developer</div>
         </div>
     </div>
   );

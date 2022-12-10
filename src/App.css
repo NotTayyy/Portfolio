@@ -28,17 +28,32 @@ body {
 
 a, u {
     text-decoration: none;
-    color: rgb(201, 31, 31);
     font-weight: bold;
+}
+
+.nameGit {
+    color: rgb(204, 18, 18);
 }
 
 .developer {
     color: rgb(204, 18, 18);
     font-weight: bold;
-    font-size: 60px;
     width: max-content;
 }
 
 .developer-con {
 display: flex;
+}
+ 
+nameplatediv span span { 
+    animation: move-text 0.15s forwards;
+    color: rgb(204, 18, 18);
+    position: relative;
+    opacity: 0;
+}
+
+@keyframes move-text {
+    0% { bottom: -0.1em; opacity: 1;}
+    50% { bottom: 0.1em;}
+    100% { bottom: 0; opacity: 1;}
 }
