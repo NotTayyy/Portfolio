@@ -5,33 +5,43 @@ import NamePlate from './Components/NamePlate';
 
 function App() {
   const [legalName, updateName] = useState([" ", "T", "A", "Y"]);
+  const [hover, changeHover] = useState(false);
 
   const changeName = () => updateName(" ROBERT");
   const returnName = () => updateName(" TAY");
   const clearName = () => updateName(" ");
-
-  var hover = false;
   
   function nameIn() {
-    if (hover == false) {
-      hover = true
+    if (hover === false) {
+      changeHover(true)
       clearName();
-      setTimeout(() => changeName(), 0.01); 
+      setTimeout(() => changeName(), 0.1); 
     }
   }
 
   function nameOut() {
-    hover = false 
-    clearName();
-    setTimeout(() => returnName(), 0.01);
+    if (hover === true) {
+      changeHover(false) 
+      clearName();
+      setTimeout(() => returnName(), 0.1);
+    }
+  }
+
+  const toggleNav = () => {
+    document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
   }
   
   return (
-    <div className='App'>
+    <div className='main' data-nav="false">
+      <button id='nav-toggle' type='button' onClick={toggleNav}>
+        <i className='open nav-Arrow'></i>
+        <i className='close nav-Close'></i>
+      </button>
+      <div className='App'>
         <p>Hello My Name is
           <nameplatediv>
             <span>
-              <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut} href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
+              <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut}  href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
                 <NamePlate Names={[...legalName]} />
               </a>
             </span>
@@ -39,18 +49,11 @@ function App() {
         . I am a..</p>
         <div className='developer-con'>
           <div className='developer'>
-            <Typewriter 
-              options={{  
-                strings: ['Junior Web', 'Front End', 'Full Stack'],
-                autoStart: true,
-                loop: true,
-                pauseFor: 2000,
-                delay: 150
-              }}
-            />
+            <Typewriter options={{ strings:['Junior Web', 'Front End', 'Full Stack'], autoStart: true, loop: true, pauseFor: 1500, delay: 150 }}/>
           </div>
         <div>Developer</div>
         </div>
+      </div>
     </div>
   );
 }
