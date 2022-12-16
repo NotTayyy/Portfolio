@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import NamePlate from './Components/NamePlate';
+import HiddenNav from './Components/HiddenNav';
 
 function App() {
   const [legalName, updateName] = useState([" ", "T", "A", "Y"]);
@@ -27,18 +28,19 @@ function App() {
     }
   }
 
-  const toggleNav = () => {
-    document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
-  }
+  const toggleNav = () => { document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true"; }
+  const toggleNavHover = () => { document.body.dataset.navhov = 'true'}
+  const toggleNavHoverOff = () => { document.body.dataset.navhov = 'false'}
   
   return (
-    <div className='main' data-nav="false">
-      <button id='nav-toggle' type='button' onClick={toggleNav}>
+    <>
+    <div className='main' data-nav="false" data-navhov="false">
+      <button id='nav-toggle' type='button' onClick={toggleNav} onMouseEnter={toggleNavHover} onMouseLeave={toggleNavHoverOff}>
         <i className='open nav-Arrow'></i>
         <i className='close nav-Close'></i>
       </button>
       <div className='App'>
-        <p>Hello My Name is
+        <p>Hello! My Name is
           <nameplatediv>
             <span>
               <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut}  href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
@@ -55,6 +57,10 @@ function App() {
         </div>
       </div>
     </div>
+    <nav>
+        <HiddenNav />
+      </nav>
+    </>
   );
 }
 
