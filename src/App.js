@@ -40,7 +40,7 @@ function App() {
         <i className='close nav-Close'></i>
       </button>
       <div className='App'>
-        <p>Hello! My Name is
+        <p>Hello! My Name is 
           <nameplatediv>
             <span>
               <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut}  href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
