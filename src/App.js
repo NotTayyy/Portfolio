@@ -14,7 +14,7 @@ function App() {
   
   function nameIn() {
     if (hover === false) {
-      changeHover(true)
+      changeHover(true);
       clearName();
       setTimeout(() => changeName(), 0.1); 
     }
@@ -22,13 +22,14 @@ function App() {
 
   function nameOut() {
     if (hover === true) {
-      changeHover(false) 
+      changeHover(false);
       clearName();
       setTimeout(() => returnName(), 0.1);
     }
   }
 
-  const toggleNav = () => { document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true"; }
+  const toggleNav = () => document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
+
   const toggleNavHover = () => { document.body.dataset.navhov = 'true'}
   const toggleNavHoverOff = () => { document.body.dataset.navhov = 'false'}
   
@@ -48,7 +49,8 @@ function App() {
               </a>
             </span>
           </nameplatediv>
-        . I am a..</p>
+        . I am a..
+        </p>
         <div className='developer-con'>
           <div className='developer'>
             <Typewriter options={{ strings:['Junior Web', 'Front End', 'Full Stack'], autoStart: true, loop: true, pauseFor: 1500, delay: 150 }}/>
@@ -58,8 +60,8 @@ function App() {
       </div>
     </div>
     <nav>
-        <HiddenNav />
-      </nav>
+      <HiddenNav />
+    </nav>
     </>
   );
 }

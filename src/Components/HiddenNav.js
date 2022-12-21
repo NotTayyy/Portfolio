@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function HiddenNav() {
+
 return (
     <div id='nav-links'>
         <a className='nav-link' href='index.html'>
