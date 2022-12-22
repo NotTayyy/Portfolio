@@ -29,19 +29,18 @@ function App() {
   }
 
   const toggleNav = () => document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
-
-  const toggleNavHover = () => { document.body.dataset.navhov = 'true'}
-  const toggleNavHoverOff = () => { document.body.dataset.navhov = 'false'}
+  const toggleNavHov = () => document.body.dataset.navhov = document.body.dataset.navhov === 'true' ? 'false' : 'true';
   
   return (
     <>
     <div className='main' data-nav="false" data-navhov="false">
-      <button id='nav-toggle' type='button' onClick={toggleNav} onMouseEnter={toggleNavHover} onMouseLeave={toggleNavHoverOff}>
+      <button id='nav-toggle' type='button' onClick={toggleNav} onMouseEnter={toggleNavHov} onMouseLeave={toggleNavHov}>
         <i className='open nav-Arrow'></i>
         <i className='close nav-Close'></i>
+        <i className='default nav-Def'></i>
       </button>
       <div className='App'>
-        <p>Hello! My Name is 
+        <h3>Welcome!</h3><p>My Name is 
           <nameplatediv>
             <span>
               <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut}  href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
