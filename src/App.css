@@ -160,6 +160,7 @@ nav {
     width: 100vw;
     justify-content: space-evenly;
     display: flex;
+    opacity: 0;
 }
 
 body[data-nav="false"] #nav-links {
@@ -173,14 +174,14 @@ body[data-nav="true"] #nav-links {
 
 
 @keyframes fade-in {
-    0% { opacity: 1; }
+    0% { opacity: 0; }
     100% { 
         opacity: 1;
         transform: none; }
 }
 @keyframes fade-out {
     0% { opacity: 1;}
-    100% {opacity: 1;
+    100% {opacity: 0;
         transform: translateY(20%) scale(0.5);}
 }
 
