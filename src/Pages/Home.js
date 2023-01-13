@@ -1,14 +1,14 @@
-import './App.css';
+import '../App.css';
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
-import NamePlate from './Components/NamePlate';
-import HiddenNav from './Components/HiddenNav';
+import NamePlate from '../Components/NamePlate';
+import HiddenNav from '../Components/HiddenNav';
 
 function App() {
   const [legalName, updateName] = useState([" ", "T", "A", "Y"]);
   const [hover, changeHover] = useState(false);
 
-  const changeName = () => updateName(" ROBERT");
+  const changeName = () => updateName(" Develop");
   const returnName = () => updateName(" TAY");
   const clearName = () => updateName(" ");
   
@@ -40,7 +40,7 @@ function App() {
         <i className='default nav-Def'></i>
       </button>
       <div className='App'>
-        <h3>Welcome!</h3><p>My Name is 
+        <h3>Welcome!</h3><p>My name is 
           <nameplatediv>
             <span>
               <a className='nameGit' onMouseEnter={nameIn} onMouseLeave={nameOut}  href='https://github.com/NotTayyy' target='_blank' rel='noreferrer'>
@@ -54,7 +54,7 @@ function App() {
           <div className='developer'>
             <Typewriter options={{ strings:['Junior Web', 'Front End', 'Full Stack'], autoStart: true, loop: true, pauseFor: 1500, delay: 150 }}/>
           </div>
-        <div>Developer</div>
+        <div>developer</div>
         </div>
       </div>
     </div>
