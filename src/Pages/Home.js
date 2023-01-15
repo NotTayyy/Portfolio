@@ -4,13 +4,13 @@ import Typewriter from 'typewriter-effect';
 import NamePlate from '../Components/NamePlate';
 import HiddenNav from '../Components/HiddenNav';
 
-function App() {
-  const [legalName, updateName] = useState([" ", "T", "A", "Y"]);
+function Home() {
+  const [legalName, updateName] = useState([' ', 'T', 'A', 'Y']);
   const [hover, changeHover] = useState(false);
-
-  const changeName = () => updateName(" Develop");
-  const returnName = () => updateName(" TAY");
-  const clearName = () => updateName(" ");
+  
+  const changeName = () => updateName(' Develop');
+  const returnName = () => updateName(' Tay');
+  const clearName = () => updateName(' '); 
   
   function nameIn() {
     if (hover === false) {
@@ -28,11 +28,11 @@ function App() {
     }
   }
 
-  const toggleNav = () => document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
+  const toggleNav = () => document.body.dataset.nav = document.body.dataset.nav === 'true' ? 'false' : 'true';
   const toggleNavHov = () => document.body.dataset.navhov = document.body.dataset.navhov === 'true' ? 'false' : 'true';
   
   return (
-    <>
+  <div id='Home' class="ripple-container" >
     <div className='main' data-nav="false" data-navhov="false">
       <button id='nav-toggle' type='button' onClick={toggleNav} onMouseEnter={toggleNavHov} onMouseLeave={toggleNavHov}>
         <i className='open nav-Arrow'></i>
@@ -61,8 +61,8 @@ function App() {
     <nav>
       <HiddenNav />
     </nav>
-    </>
+  </div>
   );
 }
 
-export default App;
+export default Home;
