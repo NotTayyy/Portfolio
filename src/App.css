@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Satoshi', sans-serif;
-    background-color: rgb(112, 112, 112);    
+    background-color: #141414;    
 }
     
 .App {
@@ -79,7 +79,7 @@ nameplatediv span span {
     height: 100vh;
     width: 100vw;
     margin: 0px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(4, 2, 29);
     background-size: cover;
     background-position: center 0%;
     position: relative;
@@ -309,11 +309,14 @@ body::-webkit-scrollbar-thumb {
     height: auto;
     z-index: 3;
     width: 100vw;
-
 }
 
 #topNavBar ul {
     display: flex;
     justify-content: space-evenly;
+}
 
+.About {
+    font-size: 60px;
+    color: rgb(156, 124, 145);
 }

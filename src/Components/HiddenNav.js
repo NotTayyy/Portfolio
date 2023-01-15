@@ -49,7 +49,7 @@ return (
     <div id='nav-links'>
         <a className='nav-link ripple-container' href='/About' onClick={NoGo}>
             <h2 className='nav-link-label'>About</h2>
-            <img className='nav-link-image' src='' alt='About_Page'></img>
+            <img className='nav-link-image' src='https://blog-assets.freshworks.com/freshsales-crm/wp-content/uploads/2018/11/Banner_006.png' alt='About_Page'></img>
         </a>
         <a className='nav-link ripple-container' href='/' onClick={NoGo}>
             <h2 className='nav-link-label'>Projects</h2>
