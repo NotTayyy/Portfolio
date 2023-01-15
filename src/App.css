@@ -6,19 +6,18 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     margin: 0px;
     place-items: center;
-    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     font-family: 'Satoshi', sans-serif;
-    background-color: rgb(19, 19, 19);
-    
+    background-color: rgb(112, 112, 112);    
 }
     
 .App {
+    height: 100%;
     color: rgb(255, 255, 255);
     font-size: 6rem;
     font-weight: var(--Normal);
@@ -80,7 +79,7 @@ nameplatediv span span {
     height: 100vh;
     width: 100vw;
     margin: 0px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(20, 20, 20);
     background-size: cover;
     background-position: center 0%;
     position: relative;
@@ -194,7 +193,7 @@ body[data-nav="true"] #nav-links {
 }
 
 #nav-links a:hover {
-    transform: translateY(-10%) translateX(2%) scale(0.9);
+    transform: translateY(-10%) translateX(5%) scale(0.8) rotateZ(3deg);
 }
 
 .nav-link-image {
@@ -256,10 +255,65 @@ body::-webkit-scrollbar-thumb {
     animation-delay: 4;
 }
 
-.active {
+.click-ripple {
+    background-color: aqua;
+    background-image: none;
+}
+
+.ripple-container {
+    position: relative;
+    overflow: hidden;
+
+    --effect-name: ripple;
+    --effect-duration: 500ms;
+    --effect-top: 0px;
+    --effect-left: 0px;
+    --effect-height: 100px;
+    --effect-width: 100px;
+    --effect-color: #EED799;
+}
+
+.ripple-container::before {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+
+    top: var(--effect-top);
+    left: var(--effect-left);
+    height: var(--effect-height);
+    width: var(--effect-width);
+    border-radius: 50%;
+    transform: scale(0);
+    background: var(--effect-color);
+}
+
+.ripple-container.active::before {
+    border-radius: 50%;
+    animation: ripple var(--effect-duration) linear forwards;
+    z-index: 10 ;
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(50);
+        opacity: 1;
+    }
+}
+
+#topNavBar {
+    position: absolute;
+    top: 10px;
+    height: auto;
+    z-index: 3;
+    width: 100vw;
 
 }
 
-.click-ripple {
-    
+#topNavBar ul {
+    display: flex;
+    justify-content: space-evenly;
+
 }
