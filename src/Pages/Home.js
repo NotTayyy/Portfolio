@@ -7,7 +7,7 @@ import HiddenNav from '../Components/HiddenNav';
 function Home() {
   const [legalName, updateName] = useState([' ', 'T', 'A', 'Y']);
   const [hover, changeHover] = useState(false);
-  
+    
   const changeName = () => updateName(' Develop');
   const returnName = () => updateName(' Tay');
   const clearName = () => updateName(' '); 

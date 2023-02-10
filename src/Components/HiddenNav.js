@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function HiddenNav() {
+    //This Code is mean to Play a Ripple animation from where you click on one of the Anchor Tags
     const rippleMain = document.getElementById('root')
     const navigate = useNavigate()
 
     useEffect(() => {
+        //On component load it adds the Event listener to all the Anchors
         const animButtonRef = document.querySelectorAll('.nav-link');
         animButtonRef.forEach(el => el.addEventListener('mousedown', onClick))
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -19,11 +21,10 @@ export default function HiddenNav() {
         style.setProperty("--effect-left", `${clientX - sideOffset}px`)
     }
 
-    let onClick = (e) => {
-        const targetPage = e.currentTarget.getAttribute('href');
-        console.log(e.targetPage);
+    let onClick = (ev) => {
+        const targetPage = ev.currentTarget.getAttribute('href');
         rippleMain.classList.remove('active');
-        applyStyles(rippleMain, e);
+        applyStyles(rippleMain, ev);
         rippleMain.classList.add('active');
         cleanupEvents()
         setTimeout(() => {
@@ -35,6 +36,7 @@ export default function HiddenNav() {
     }
 
     function cleanupEvents() {
+        //Removes and reads the Event to all anchors because otherwise they would all Do the Button click for some reason.
         const animButtonRef = document.querySelectorAll('.nav-link');
         animButtonRef.forEach(el => el.removeEventListener('mousedown', onClick))
         animButtonRef.forEach(el => el.addEventListener('mousedown', onClick))
